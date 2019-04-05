@@ -31,4 +31,3 @@ physics3rd(studentsArr);
 queries(studentsArr);
 
 
-

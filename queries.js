@@ -5,7 +5,7 @@ module.exports=(studentsArr)=>{
     hasNoAcademicProblems();
     onFirstCourse();
     hasAccessToLab();
-
+    whoLeadWho();
     function lowestRating() {
         let lastRating = 0;
         for (let x = 0; x < studentsArr.length; x++) {
@@ -42,7 +42,7 @@ module.exports=(studentsArr)=>{
                 names.push(studentsArr[x].name)
             }
         }
-        console.log('Has academic problems : ' +names.toString())
+        console.log('Has no academic debts : ' +names.toString())
     }
 
     function onFirstCourse() {
@@ -63,5 +63,21 @@ module.exports=(studentsArr)=>{
             }
         }
         console.log('Has access to lab : ' +names.toString())
+       // console.log(studentsArr);
+    }
+    function whoLeadWho() {
+        let name ;
+        let names=[];
+        for (let x = 0;x<studentsArr.length;x++){
+            if (studentsArr[x].leadingFor!== null) {
+                name =studentsArr[x].name;
+                for (let y = 0;y<studentsArr[x].leadingFor.length ;y++) {
+                    names.push(studentsArr[x].leadingFor[y].name)
+                }
+            }
+        }
+        let string = name+' are leading : ' +names.toString().replace(',',' and ');
+        console.log(string)
+
     }
 };
