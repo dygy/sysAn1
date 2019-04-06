@@ -6,6 +6,7 @@ module.exports=(studentsArr)=>{
     onFirstCourse();
     hasAccessToLab();
     whoLeadWho();
+
     function lowestRating() {
         let lastRating = 0;
         for (let x = 0; x < studentsArr.length; x++) {
@@ -72,11 +73,16 @@ module.exports=(studentsArr)=>{
             if (studentsArr[x].leadingFor!== null) {
                 name =studentsArr[x].name;
                 for (let y = 0;y<studentsArr[x].leadingFor.length ;y++) {
-                    names.push(studentsArr[x].leadingFor[y].name)
+                    names.push(studentsArr[x].leadingFor[y].name+' from '+
+                        studentsArr[x].leadingFor[y].department+' department on '+
+                        studentsArr[x].leadingFor[y].course+' course')
                 }
             }
         }
-        let string = name+' are leading : ' +names.toString().replace(',',' and ');
+        let string = name+' are leading : ' +names.toString()
+            .replace(',',' and ')
+            .replace('1','first')
+            .replace('2','second');
         console.log(string)
 
     }
