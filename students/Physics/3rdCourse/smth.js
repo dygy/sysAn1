@@ -29,6 +29,8 @@ arr.push(smthObject);
     smth2Object.rating= arr.findIndex(i => i.name === smth2Object.name)+1;
     arr.pop();
     arr.push(smth2Object);
+
+
      function students () {
         for (let i=0;i<arr.length ; i++){
             if (arr[i].course <3 && arr[i].department==='Physics') {

@@ -14,7 +14,7 @@ smthObject.rating= arr.findIndex(i => i.name === smthObject.name)+1;
 arr.pop();
 arr.push(smthObject);
     let smth2Object = {
-        name: 'Vladimir',
+        name: 'Vova',
         department:'CS',
         age: 23,
         rating:'',
